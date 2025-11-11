@@ -1,5 +1,4 @@
 # thefilmydj.github.io
-<!doctype html>
 <html lang="mr">
 <head>
   <meta charset="utf-8" />
