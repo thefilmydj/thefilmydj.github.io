@@ -1,235 +1,177 @@
-
 <!doctype html>
 <html lang="mr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>thefilmydj — thefilmydj.github.io</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>thefilmydj_</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #ff5f6d;
+      --bg2: #ffc371;
+      --accent: #fff;
+      --glass: rgba(255,255,255,0.06);
+      --card: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;min-height:100vh;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--accent);display:flex;align-items:center;justify-content:center;padding:40px;
+    }
+    .wrap{width:100%;max-width:1000px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border-radius:20px;padding:36px;box-shadow:0 10px 30px rgba(0,0,0,0.18);backdrop-filter:blur(6px);position:relative}
 
-  <!-- Google Font for Marathi -->
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;700&display=swap" rel="stylesheet">
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .brand{display:flex;align-items:center;gap:16px}
+    .logo{width:72px;height:72px;border-radius:14px;background:linear-gradient(135deg,rgba(255,255,255,0.12),rgba(255,255,255,0.04));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px}
+    h1{margin:0;font-weight:800;font-size:28px;letter-spacing:0.6px}
+    .tag{font-weight:400;opacity:0.95}
 
-  <link rel="stylesheet" href="styles.css" />
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center}
+    .intro{padding:18px}
+    .eyebrow{font-size:13px;text-transform:uppercase;opacity:0.85;letter-spacing:1px}
+    .headline{font-size:36px;margin:8px 0 12px}
+    .lead{font-size:15px;line-height:1.6;opacity:0.95}
+    .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:12px 18px;border-radius:10px;background:rgba(0,0,0,0.18);color:var(--accent);text-decoration:none;font-weight:600}
+
+    .card{background:var(--card);border-radius:14px;padding:18px}
+    .profile{display:flex;flex-direction:column;align-items:center;gap:12px}
+    .avatar{width:180px;height:180px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;background:linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))}
+    .socials{display:flex;flex-direction:column;gap:10px;width:100%}
+    .social{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));text-decoration:none;color:var(--accent)}
+    .social svg{width:22px;height:22px;flex-shrink:0}
+    .social .handle{font-weight:600}
+
+    section{margin-top:22px}
+    .about{display:flex;gap:18px;align-items:flex-start}
+    .about p{margin:0;line-height:1.7;opacity:0.95}
+
+    footer{margin-top:22px;text-align:center;opacity:0.9;font-size:13px}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .avatar{width:140px;height:140px}
+    }
+
+    .wrap::before{
+      content:"";position:absolute;left:0;right:0;top:0;bottom:0;border-radius:28px;z-index:-1;filter:blur(60px);opacity:0.55;background:conic-gradient(from 180deg at 50% 50%, rgba(255,255,255,0.06), rgba(255,255,255,0.02));animation:spin 12s linear infinite
+    }
+    @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+  </style>
 </head>
 <body>
-  <!-- Top / Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#home">thefilmydj</a>
-      <nav class="main-nav" id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-        <!-- Resume will open in new tab -->
-        <a href="assets/resume.jpg" target="_blank" rel="noopener" id="resumeLink">Resume</a>
-      </nav>
-
-      <button class="hamburger" id="hamburger" aria-label="menu">☰</button>
-    </div>
-  </header>
-
-  <!-- HERO / SLIDER -->
-  <section id="home" class="hero">
-    <div class="slider" id="slider">
-      <!-- Slide items: replace images in assets/ -->
-      <div class="slide" style="background-image:url('assets/slider1.jpg')" data-color="rgba(243,110,33,0.45)">
-        <div class="overlay"></div>
-      </div>
-      <div class="slide" style="background-image:url('assets/slider2.jpg')" data-color="rgba(63,81,181,0.45)">
-        <div class="overlay"></div>
-      </div>
-      <div class="slide" style="background-image:url('assets/slider3.jpg')" data-color="rgba(156,39,176,0.45)">
-        <div class="overlay"></div>
-      </div>
-      <div class="slide" style="background-image:url('assets/slider4.jpg')" data-color="rgba(0,150,136,0.45)">
-        <div class="overlay"></div>
-      </div>
-      <div class="slide" style="background-image:url('assets/slider5.jpg')" data-color="rgba(244,67,54,0.45)">
-        <div class="overlay"></div>
-      </div>
-
-      <!-- slider content box (fixed on top-left) -->
-      <div class="hero-content">
-        <h1 class="marathi-quote">कॅमेरा चालू झाला की जग विसरतो, प्रत्येक डायलॉगमध्ये स्वतःला शोधतो…</h1>
-        <p class="bio">
-          तितकं filmy, थोडं dreamy — असाच मी — <strong>thefilmydj_</strong><br/>
-          ◼️ Marathi content Creator • Comedy / Emotional / Motivational • Reel creator<br/>
-          🎥 Short video 🎥 • 𝚃𝚒𝚖𝚎 𝚒𝚜 𝚖𝚘𝚗𝚎𝚢 🕒 • 🎂 01/July Wish me
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn" href="https://instagram.com/thefilmydj_" target="_blank" rel="noopener">Instagram</a>
-          <a class="btn ghost" href="https://youtube.com/@thefilmydj" target="_blank" rel="noopener">YouTube</a>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SD</div>
+        <div>
+          <h1>thefilmydj_</h1>
+          <div class="tag">Dnyaneshwar Jadhav</div>
         </div>
       </div>
+      <nav style="display:flex;gap:12px;align-items:center">
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#contact">Contact</a>
+      </nav>
+    </header>
 
-      <!-- slider controls -->
-      <button class="slide-prev" id="prevBtn" aria-label="previous">‹</button>
-      <button class="slide-next" id="nextBtn" aria-label="next">›</button>
-    </div>
-  </section>
+    <main class="hero">
+      <div class="intro">
+        <div class="eyebrow"> actor • video creator • thefilmydj_</div>
+        <div class="headline">तुम्हा सागळ्यांचा लाडका thefilmydj_</div>
+        <div class="lead">कॅमेरा चालू झाला की जग विसरतो,
+प्रत्येक डायलॉगमध्ये स्वतःला शोधतो,
+थोडं filmy, थोडं dreamy,
+असाच मी — thefilmydj_ 🎭</div>
 
-  <!-- About -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About</h2>
-      <p>मी तुमच्यासमोर पटकन रिअॅक्ट करणारा आणि भावना देणारा कंटेंट बनवतो — शॉर्ट्स, रील्स आणि थोडे dramatics. माझं handle: <strong>@thefilmydj_</strong></p>
-    </div>
-  </section>
+        <div class="cta">
+          <a class="btn" href="#projects">Portfolio पाहा</a>
+          <a class="btn" href="#contact">Direct संपर्क</a>
+        </div>
 
-  <!-- Gallery placeholder -->
-  <section id="gallery" class="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <p>इथे तुला तुमच्या फोटो किंवा व्हिडिओच्या स्क्रीनशॉट्स टाकता येतील (assets/ मध्ये ठेवा).</p>
-    </div>
-  </section>
+        <section id="projects">
+          <h3 style="margin-top:20px">Projects</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px">
+            <div class="card">my photo </div>
+            <div class="card">my photo </div>
+            <div class="card"> projects </div>
+          </div>
+        </section>
+      </div>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Instagram: <a href="https://instagram.com/thefilmydj_" target="_blank" rel="noopener">@thefilmydj_</a> | YouTube: <a href="https://youtube.com/@thefilmydj" target="_blank" rel="noopener">thefilmydj</a></p>
-    </div>
-  </section>
+      <aside class="card profile">
+        <div class="avatar">SD</div>
+        <div style="text-align:center">
+          <div style="font-weight:700">thefilmydj_</div>
+          <div style="opacity:0.9;font-size:13px">Filmmaker • thefilmydj_</div>
+        </div>
 
-  <footer class="site-footer">
-    <div class="container">
-      <div>© 2025 thefilmydj — All rights reserved</div>
-      <div class="small">Made with ❤️</div>
-    </div>
-  </footer>
+        <div class="socials">
+          <a class="social" href="https://instagram.com/thefilmydj_/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+            </svg>
+            <div style="display:flex;flex-direction:column">
+              <div class="handle">@thefilmydj_</div>
+              <div style="font-size:12px;opacity:0.85">Instagram</div>
+            </div>
+          </a>
 
-  <script src="script.js"></script>
+          <a class="social" href="https://youtube.com/@thefilmydj" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="6" width="20" height="12" rx="3" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M10 9.5L15 12L10 14.5V9.5Z" fill="currentColor"/>
+            </svg>
+            <div style="display:flex;flex-direction:column">
+              <div class="handle">@thefilmydj_</div>
+              <div style="font-size:12px;opacity:0.85">YouTube</div>
+            </div>
+          </a>
+        </div>
+
+        <div style="width:100%;text-align:center;margin-top:8px">
+          <a class="btn" href="#contact">संपर्क करा</a>
+        </div>
+      </aside>
+    </main>
+
+    <section class="about">
+      <div style="flex:1">
+        <h3>About</h3>
+        <p>मी thefilmydj_ — कॅमेरा चालू झाला की जग विसरतो,
+प्रत्येक डायलॉगमध्ये स्वतःला शोधतो,
+थोडं filmy, थोडं dreamy,
+असाच मी — thefilmydj_ 🎭</p>
+      </div>
+      <div style="width:260px">
+        <div class="card">
+          <strong>Quick facts</strong>
+          <ul style="padding-left:18px;margin:8px 0">
+            <li>Short films</li>
+            <li>Stage plays </li>
+            <li>Editing • Direction • Story</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact</h3>
+      <p>Direct: <a href="mailto:thefilmydj@example.com" style="color:inherit;text-decoration:underline">djjadhavdnyaneshwar@gmail.com</a> — किंवा Instagram वर DM करा.</p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> thefilmydj_ — made by Dnyaneshwar Jadhav (thefilmydj_)
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-:root{
-  --font: "Baloo Bhai 2", system-ui, sans-serif;
-  --accent: #ff6e35;
-  --muted: #c7c7c7;
-  --container:1100px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;font-family:var(--font);color:#fff;background:#000;line-height:1.4}
-.container{max-width:var(--container);margin:0 auto;padding:0 16px}
-
-/* header */
-.site-header{position:fixed;top:0;left:0;right:0;z-index:60;padding:10px 0;backdrop-filter: blur(6px)}
-.header-inner{display:flex;align-items:center;justify-content:space-between}
-.brand{font-size:20px;color:#fff;text-decoration:none;font-weight:700;padding:6px 8px}
-.main-nav a{color:#fff;text-decoration:none;margin-left:18px;font-weight:600;opacity:0.95}
-.hamburger{display:none;background:none;border:none;color:#fff;font-size:22px}
-
-/* hero / slider */
-.hero{height:85vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:56px}
-.slider{position:relative;width:100%;height:100%}
-.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1s ease;display:block}
-.slide.active{opacity:1;z-index:1}
-.slide .overlay{position:absolute;inset:0;background:transparent;mix-blend-mode:multiply}
-
-/* hero content */
-.hero-content{position:absolute;left:40px;top:80px;max-width:560px;z-index:40}
-.marathi-quote{font-size:28px;margin:0 0 12px;color:#fff;text-shadow:0 8px 30px rgba(0,0,0,0.6)}
-.bio{color:rgba(255,255,255,0.9);margin:0 0 18px}
-.hero-actions .btn{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;margin-right:10px;font-weight:700}
-.btn{background:var(--accent);color:#111}
-.btn.ghost{background:transparent;border:2px solid rgba(255,255,255,0.18);color:#fff}
-
-/* controls */
-.slide-prev, .slide-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.45);border:none;color:#fff;padding:12px 14px;font-size:22px;border-radius:6px;cursor:pointer;z-index:50}
-.slide-prev{left:20px}
-.slide-next{right:20px}
-
-/* sections */
-section{padding:64px 0;background:transparent}
-.about, .gallery, .contact{background:#0d0d0d}
-h2{color:#fff;margin-bottom:10px}
-
-/* footer */
-.site-footer{background:#050505;padding:18px 0;color:#aaa;text-align:center}
-
-/* responsive */
-@media (max-width:900px){
-  .hero-content{left:20px;right:20px;top:60px;text-align:left}
-  .main-nav{display:none}
-  .hamburger{display:block}
-}
-@media (max-width:560px){
-  .marathi-quote{font-size:20px}
-  .slide-prev, .slide-next{display:none}
-}
-// Mobile menu
-const hamburger = document.getElementById('hamburger');
-const mainNav = document.getElementById('mainNav');
-hamburger && hamburger.addEventListener('click', () => {
-  if (mainNav.style.display === 'block') mainNav.style.display = '';
-  else mainNav.style.display = 'block';
-});
-
-// Simple fade slider with per-slide overlay color
-const slides = Array.from(document.querySelectorAll('.slide'));
-let current = 0;
-const slideInterval = 5000; // 5s
-let timer = null;
-
-function showSlide(idx){
-  slides.forEach((s,i)=>{
-    s.classList.remove('active');
-    // set overlay color from data-color attribute
-    const overlay = s.querySelector('.overlay');
-    if (overlay){
-      overlay.style.background = s.dataset.color || 'rgba(0,0,0,0.45)';
-      overlay.style.transition = 'background 0.6s';
-    }
-    if (i === idx){
-      s.classList.add('active');
-    }
-  });
-  current = idx;
-}
-
-function nextSlide(){
-  let nxt = (current + 1) % slides.length;
-  showSlide(nxt);
-}
-
-function prevSlide(){
-  let prev = (current - 1 + slides.length) % slides.length;
-  showSlide(prev);
-}
-
-// init
-if (slides.length){
-  showSlide(0);
-  timer = setInterval(nextSlide, slideInterval);
-}
-
-// next/prev buttons
-const nextBtn = document.getElementById('nextBtn');
-const prevBtn = document.getElementById('prevBtn');
-nextBtn && nextBtn.addEventListener('click', ()=>{
-  clearInterval(timer);
-  nextSlide();
-  timer = setInterval(nextSlide, slideInterval);
-});
-prevBtn && prevBtn.addEventListener('click', ()=>{
-  clearInterval(timer);
-  prevSlide();
-  timer = setInterval(nextSlide, slideInterval);
-});
-
-// Smooth scroll for internal anchors
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', function(e){
-    const href = this.getAttribute('href');
-    if (href === '#' || href === '#0') return;
-    const target = document.querySelector(href);
-    if (target){
-      e.preventDefault();
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      if(window.innerWidth < 900 && mainNav) mainNav.style.display = '';
-    }
-  });
-});
