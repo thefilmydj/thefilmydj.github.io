@@ -103,7 +103,7 @@
   <div class="section">
     <h3>Gallery</h3>
     <div class="gallery">
-      <img src="assets/images/photo1.jpg" alt="Photo 1">
+      <img src="1660402053562.jpg" alt="Photo 1">
       <img src="assets/images/photo2.jpg" alt="Photo 2">
       <img src="assets/images/photo3.jpg" alt="Photo 3">
     </div>
