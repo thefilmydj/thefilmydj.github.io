@@ -96,7 +96,17 @@
         <section id="projects">
           <h3 style="margin-top:20px">Projects</h3>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px">
-        <a href="assets/images/myphoto.jpg" target="_blank">Click here to see my photo</a>
+        <a href="1660402053562.jpg
+1713568659017.jpg
+1752631905709.jpg
+20240313_134001.png
+IMG-20221019-WA0006.jpg
+IMG-20230410-WA0006.jpg
+IMG-20250928-WA0031.jpg
+IMG20230515130037_1.jpg
+IMG20241027120645_1.jpg
+IMG20241027125548_1.jpg
+IMG_20250330_220207.jpg" target="_blank">Click here to see my photo</a>
         <a href="assets/images/myphoto.jpg" target="_blank">Click here to see my photo</a>
         <a href="assets/images/myphoto.jpg" target="_blank">Click here to see my photo</a>
           </div>
