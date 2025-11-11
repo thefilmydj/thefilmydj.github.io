@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="mr">
 <head>
@@ -95,9 +96,9 @@
         <section id="projects">
           <h3 style="margin-top:20px">Projects</h3>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px">
-            <div class="card">my photo </div>
-            <div class="card">my photo </div>
-            <div class="card"> projects </div>
+           <a href="https://github.com" target="_blank">my photo</a>
+            <a href="https://github.com" target="_blank">my photo</a>
+            <a href="https://github.com" target="_blank">my photo</a>
           </div>
         </section>
       </div>
