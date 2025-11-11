@@ -67,6 +67,10 @@
     <header>
       <div class="brand">
         <div class="logo">SD</div>
+        git add assets/images/yourphoto.jpg
+git commit -m "![Uploading 1660402053562.jpg…]()
+"
+git push origin main
         <div>
           <h1>thefilmydj_</h1>
           <div class="tag">tulihun mala de</div>
