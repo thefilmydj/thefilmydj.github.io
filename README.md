@@ -14,7 +14,7 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background: url('1713568659017.jpg');
+    background: url('assets/logo.png');
     background-size: cover;
     animation: float 3s ease-in-out infinite;
     margin: 20px;
@@ -76,7 +76,7 @@
 </head>
 <body>
 <header>
-  <div class="20240313_134001.png"></div>
+  <div class="logo-circle"></div>
   <h1>the<span>film</span>ydj_</h1>
 </header>
 
