@@ -1,197 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>the filmy dj_</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title><span style="color:red;text-shadow:0 0 6px red;">thefilmydj_</span></title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(120deg, #0f1724, #1e3a5f);
-        color: white;
-        overflow-x: hidden;
-        height: 100vh; /* FULL SCREEN FIX */
-        transition: background 0.4s ease;
-    }
+  :root{
+    --bg1:#0f1724;
+    --bg2:#1e3a5f;
+    --pink:#ff1fae;
+    --glass: rgba(255,255,255,0.06);
+  }
 
-    /* Animations */
-    @keyframes shake {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-6px); }
-        100% { transform: translateY(0); }
-    }
+  body{
+    margin:0;
+    font-family:Inter, Arial, sans-serif;
+    color:#fff;
+    background:linear-gradient(120deg,var(--bg1),var(--bg2));
+    background-size:400% 400%;
+    height:100vh;
+    overflow-x:hidden;
+  }
 
-    @keyframes liveGradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+  /* HEADER */
+  header{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    padding:22px 28px;
+  }
 
-    /* Header */
-    header {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        padding: 30px;
-    }
+  .logo-circle{
+    width:88px;
+    height:88px;
+    border-radius:50%;
+    background:url('YOUR_LOGO_URL') center/cover;
+    border:3px solid rgba(255,255,255,0.18);
+  }
 
-    .logo-circle {
-        width: 90px;
-        height: 90px;
-        border-radius: 50%;
-        background: url('20240313_134001.png') center/cover; /* PANEL PHOTO FIX */
-        animation: shake 2s infinite;
-        border: 3px solid rgba(255,255,255,0.25);
-    }
+  /* PINK BRAND */
+  .brand{
+    font-size:42px;
+    font-weight:900;
+    letter-spacing:1px;
+    color:#ff2b2b; /* RED */
+    text-shadow:0 0 6px #ff2b2b; /* LOW GLOW */
+  }
 
-    h1 { font-size: 44px; font-weight: bold; }
-    .t { color: #ff3b3b; margin-right: 8px; }
-    .film { color: #25d366; margin-right: 8px; }
-    .dj { color: #f1c40f; margin-right: 2px; }
-    .uscore { color: #00aaff; }
+  h3{margin:0;margin-top:6px;font-size:16px;color:#ffd789;}
 
-    /* Menu */
-    .menu {
-        display: flex;
-        gap: 25px;
-        padding-left: 40px;
-        margin-top: 20px;
-    }
+  /* MENU */
+  .menu{
+    display:flex;
+    gap:16px;
+    padding-left:26px;
+    margin-top:10px;
+    flex-wrap:wrap;
+  }
 
-    .menu button {
-        padding: 15px 30px;
-        border-radius: 30px;
-        border: 2px solid #00ffbb;
-        cursor: pointer;
-        background: rgba(255,255,255,0.2);
-        color: white;
-        font-size: 18px;
-        transition: 0.3s;
-    }
+  .menu button{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    padding:12px 20px;
+    border-radius:999px;
+    color:#fff;
+    cursor:pointer;
+    font-weight:600;
+    transition:.2s;
+  }
+  .menu button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(0,0,0,.5);
+  }
 
-    .menu button:hover {
-        transform: scale(1.12);
-        background: rgba(255,255,255,0.35);
-    }
+  /* SETTINGS BUTTON RIGHT TOP FIXED */
+  .settings-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:2000;
+    font-size:28px;
+    background:rgba(255,255,255,0.07);
+    padding:10px 12px;
+    border-radius:10px;
+    cursor:pointer;
+  }
 
-    /* Photo */
-    .photo-box {
-        width: 370px;
-        height: 370px;
-        background: url('1713568659017.jpg') center/cover;
-        border-radius: 40px;
-        position: absolute;
-        right: 60px;
-        top: 300px;
-        animation: shake 2.3s infinite;
-        border: 4px solid rgba(255,255,255,0.22);
-    }
+  .settings-panel{
+    position:fixed;
+    top:70px;
+    right:20px;
+    width:300px;
+    background:rgba(0,0,0,0.6);
+    padding:14px;
+    border-radius:12px;
+    display:none;
+    z-index:2000;
+  }
 
-    /* SETTINGS */
-    .settings-btn {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1000;
-        font-size: 26px;
-        background: rgba(255,255,255,0.3);
-        padding: 10px 14px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+  /* RIGHT PHOTO PANEL */
+  .photo-box{
+    width:360px;
+    height:360px;
+    border-radius:26px;
+    background:url('YOUR_PHOTO_URL') center/cover;
+    position:absolute;
+    right:48px;
+    top:200px;
+    border:3px solid rgba(255,255,255,0.08);
+    box-shadow:0 10px 40px rgba(0,0,0,.6);
+  }
 
-    .settings-panel {
-        position: fixed;
-        top: 80px;
-        right: 20px;
-        width: 230px;
-        background: rgba(0,0,0,0.55);
-        padding: 20px;
-        border-radius: 18px;
-        display: none;
-        z-index: 1000;
-        color: white;
-        backdrop-filter: blur(8px);
-    }
+  /* FLOATING EMOJIS */
+  .emoji{
+    position:fixed;
+    font-size:24px;
+    opacity:.85;
+    animation:floatUp linear infinite;
+    bottom:-60px;
+  }
+
+  @keyframes floatUp{
+    0%{transform:translateY(0) rotate(0deg);}
+    100%{transform:translateY(-110vh) rotate(600deg);}
+  }
+
+  /* STUDY CARDS */
+  .cards{
+    position:fixed;
+    left:40px;
+    bottom:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    width:420px;
+  }
+
+  .card{
+    background:rgba(255,255,255,0.05);
+    padding:14px;
+    border-radius:14px;
+    border:1px solid rgba(255,255,255,0.07);
+    backdrop-filter:blur(7px);
+  }
+
+  .card h4{margin:0 0 6px;font-size:16px;}
+  .card p{margin:0;font-size:13px;color:#cbd5e1;}
+
+  /* AUDIO PLAYER */
+  .music-bar{
+    position:fixed;
+    left:50%;
+    bottom:18px;
+    transform:translateX(-50%);
+    background:rgba(0,0,0,0.55);
+    padding:10px 20px;
+    border-radius:999px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    border:1px solid rgba(255,255,255,0.07);
+  }
 </style>
 </head>
 
 <body>
 
 <header>
-    <div class="logo-circle"></div>
-
-    <!-- FIXED SPACING → the filmy dj_ -->
-    <h1>
-        <span class="t">thefilmydj_</span>
-    </h1>
+  <div class="logo-circle"></div>
+  <div>
+    <div class="brand">thefilmydj_</div>
+    <h3>Dnyaneshwar Jadhav</h3>
+  </div>
 </header>
 
-<h3 style="margin-left:40px;">Dnyaneshwar Jadhav</h3>
-
-<!-- Menu -->
+<!-- MENU ORDER FIXED -->
 <div class="menu">
-    <button onclick="openTab('https://instagram.com/thefilmydj_/')">Instagram</button>
-    <button onclick="openTab('https://youtube.com/@thefilmydj')">YouTube</button>
-    <button onclick="openTab('study.html')">Study</button>
-    <button onclick="openTab('projects.html')">My Ph</button>
-    <button onclick="openTab('reels.html')">Reels</button>
+  <button onclick="openStudy()">Study</button>
+  <button onclick="openPh()">My Ph</button>
+  <button onclick="openTab('https://youtube.com/@thefilmydj')">YouTube</button>
+  <button onclick="openTab('https://instagram.com/thefilmydj_/')">Instagram</button>
+  <button onclick="openContact()">Contact</button>
 </div>
 
-<div class="photo-box"></div>
-
-<!-- SETTINGS BUTTON -->
+<!-- SETTINGS BUTTON RIGHT TOP -->
 <div class="settings-btn" onclick="toggleSettings()">⚙️</div>
 
 <!-- SETTINGS PANEL -->
 <div class="settings-panel" id="settingsPanel">
-    <h3>Background Controls</h3>
+  <h3>Theme Customize</h3>
+  <p style="font-size:13px;margin:6px 0;">Background Gradient</p>
+  <input type="color" id="g1" value="#0f1724" onchange="applyGradient()" />
+  <input type="color" id="g2" value="#1e3a5f" onchange="applyGradient()" />
+</div>
 
-    <p>Live Moving BG</p>
-    <button onclick="startMovingBG()">Start</button>
-    <button onclick="stopMovingBG()">Stop</button>
+<!-- RIGHT PHOTO PANEL -->
+<div class="photo-box"></div>
 
-    <br><br>
-    <p>Solid Color</p>
-    <input type="color" id="solid" onchange="changeBG(this.value)">
+<!-- FLOATING EMOJIS (MORE ADDED) -->
+<span class="emoji" style="left:10%; animation-duration:10s;">📚</span>
+<span class="emoji" style="left:25%; animation-duration:12s;">😊</span>
+<span class="emoji" style="left:40%; animation-duration:9s;">🎬</span>
+<span class="emoji" style="left:60%; animation-duration:11s;">🔥</span>
+<span class="emoji" style="left:70%; animation-duration:8s;">📘</span>
+<span class="emoji" style="left:85%; animation-duration:13s;">🎧</span>
+<span class="emoji" style="left:50%; animation-duration:14s;">😁</span>
+<span class="emoji" style="left:33%; animation-duration:10s;">📖</span>
 
-    <br><br>
-    <p>Gradient</p>
-    <input type="color" id="g1" value="#ff0080" onchange="applyGradient()">
-    <input type="color" id="g2" value="#00bfff" onchange="applyGradient()">
+<!-- STUDY CARDS -->
+<div class="cards">
+  <div class="card"><h4>Books</h4><p>PDF • Notes • Images</p></div>
+  <div class="card"><h4>Notes</h4><p>Handwritten notes</p></div>
+  <div class="card"><h4>Revisions</h4><p>Quick study sets</p></div>
+  <div class="card"><h4>Uploads</h4><p>Your uploads</p></div>
+</div>
+
+<!-- AUDIO BAR -->
+<div class="music-bar">
+  <button onclick="togglePlay()">⏯</button>
+  <audio id="player" src="YOUR_AUDIO_URL"></audio>
+  <span id="trackName">No Track</span>
 </div>
 
 <script>
-function openTab(url) { window.open(url, "_blank"); }
-
-function toggleSettings() {
-    let panel = document.getElementById("settingsPanel");
-    panel.style.display = (panel.style.display === "block") ? "none" : "block";
+function toggleSettings(){
+  let p=document.getElementById("settingsPanel");
+  p.style.display = (p.style.display==="block") ? "none" : "block";
 }
 
-function changeBG(color) {
-    document.body.style.background = color;
-    document.body.style.animation = "none";
+function applyGradient(){
+  let c1=document.getElementById("g1").value;
+  let c2=document.getElementById("g2").value;
+  document.body.style.background=`linear-gradient(120deg,${c1},${c2})`;
 }
 
-function applyGradient() {
-    let c1 = document.getElementById("g1").value;
-    let c2 = document.getElementById("g2").value;
-    document.body.style.background = `linear-gradient(120deg, ${c1}, ${c2})`;
-    document.body.style.animation = "none";
-}
+function openTab(url){window.open(url,'_blank');}
+function openStudy(){alert("Study page coming soon — full animations add होणार.");}
+function openPh(){alert("My Ph page custom तयार करू शकतो.");}
+function openContact(){alert("Contact form add करतो लवकरच.");}
 
-function startMovingBG() {
-    document.body.style.background =
-        "linear-gradient(270deg,#ff0080,#00bfff,#7d00ff)";
-    document.body.style.backgroundSize = "600% 600%";
-    document.body.style.animation = "liveGradient 8s infinite";
-}
+let player=document.getElementById("player");
+let trackName=document.getElementById("trackName");
 
-function stopMovingBG() {
-    document.body.style.animation = "none";
+function togglePlay(){
+  if(player.paused){player.play();trackName.textContent="Playing"; }
+  else{player.pause();trackName.textContent="Paused"; }
 }
 </script>
 
