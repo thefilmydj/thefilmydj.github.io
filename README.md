@@ -80,7 +80,7 @@
     .photo-box {
         width: 370px;
         height: 370px;
-        background: url('YOUR_PHOTO_URL') center/cover;
+        background: url('1713568659017.jpg') center/cover;
         border-radius: 40px;
         position: absolute;
         right: 60px;
