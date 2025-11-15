@@ -244,10 +244,7 @@
 <header>
     <div class="logo-circle"></div>
     <h1>
-        <span class="t">the&nbsp;</span>
-        <span class="film">filmy&nbsp;</span>
-        <span class="dj">dj&nbsp;</span>
-        <span class="uscore">_</span>
+        <span class="t">the&nbsp;</span> <span class="film">filmy&nbsp;</span> <span class="dj">dj&nbsp;</span> <span class="uscore">_</span>
     </h1>
 </header>
 <h3>Dnyaneshwar Jadhav</h3>
