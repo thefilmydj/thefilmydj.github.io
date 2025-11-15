@@ -41,7 +41,7 @@
         width: 90px;
         height: 90px;
         border-radius: 50%;
-        background: url('YOUR_LOGO_URL') center/cover; /* PANEL PHOTO FIX */
+        background: url('20240313_134001.png') center/cover; /* PANEL PHOTO FIX */
         animation: shake 2s infinite;
         border: 3px solid rgba(255,255,255,0.25);
     }
