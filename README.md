@@ -138,13 +138,6 @@
   <!-- smoke overlay -->
   <div class="smoke" id="smokeLayer" style="display:block"></div>
 
-  <!-- study cards -->
-  <div class="cards" id="studyCards">
-    <div class="card"><h4>Books</h4><p>PDF • Notes • Images</p></div>
-    <div class="card"><h4>Notes</h4><p>Handwritten notes</p></div>
-    <div class="card"><h4>Revisions</h4><p>Quick study sets</p></div>
-    <div class="card"><h4>Uploads</h4><p>Your uploads</p></div>
-  </div>
 
   <!-- contact popup (simple, no email) -->
   <div class="contact-popup" id="contactPopup">
