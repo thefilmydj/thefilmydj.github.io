@@ -179,14 +179,67 @@
 <div class="smoke" id="smokeLayer" style="display:block"></div>
 
 <!-- emojis -->
-<span class="emoji" style="left:6%; animation-duration:12s">📚</span>
-<span class="emoji" style="left:18%; animation-duration:10s">😊</span>
-<span class="emoji" style="left:30%; animation-duration:14s">📖</span>
-<span class="emoji" style="left:44%; animation-duration:11s">🎬</span>
-<span class="emoji" style="left:52%; animation-duration:13s">🎧</span>
-<span class="emoji" style="left:66%; animation-duration:9s">🔥</span>
-<span class="emoji" style="left:78%; animation-duration:15s">📘</span>
-<span class="emoji" style="left:88%; animation-duration:12s">😁</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emoji Rain</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #111;
+        height: 100vh;
+        position: relative;
+    }
+
+    .emoji {
+        position: absolute;
+        top: -50px;
+        font-size: 40px;
+        animation-name: fall;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-100px); opacity: 1; }
+        100% { transform: translateY(110vh); opacity: 0.3; }
+    }
+</style>
+</head>
+
+<body>
+
+<script>
+    // Create 20 falling emojis
+    const emojis = ["📚", "😊", "📖", "🎬", "🎧", "🔥", "📘", "😁"];
+
+    for (let i = 0; i < 20; i++) {
+        let span = document.createElement("span");
+        span.classList.add("emoji");
+
+        // Random emoji
+        span.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+
+        // Random horizontal position
+        span.style.left = Math.random() * 100 + "%";
+
+        // Random animation duration
+        span.style.animationDuration = (8 + Math.random() * 10) + "s";
+
+        // Random delay
+        span.style.animationDelay = (Math.random() * 5) + "s";
+
+        // Add to page
+        document.body.appendChild(span);
+    }
+</script>
+
+</body>
+</html>
 
 <!-- study cards -->
 <div class="cards" id="studyCards">
