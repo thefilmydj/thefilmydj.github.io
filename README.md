@@ -56,7 +56,7 @@
     .menu button:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.5)}
 
     /* right panel */
-    .photo-box{ width:360px;height:360px;border-radius:24px;background: url('YOUR_PANEL_PHOTO_URL_HERE') center/cover; position: absolute; right:40px; top:200px; border:3px solid rgba(255,255,255,0.06); box-shadow:0 20px 60px rgba(0,0,0,0.6); transition: transform .8s ease, filter .4s ease; will-change: transform; overflow:hidden; }
+    .photo-box{ width:360px;height:360px;border-radius:24px;background: url('20240313_134001.png') center/cover; position: absolute; right:40px; top:200px; border:3px solid rgba(255,255,255,0.06); box-shadow:0 20px 60px rgba(0,0,0,0.6); transition: transform .8s ease, filter .4s ease; will-change: transform; overflow:hidden; }
     .panel-animate{ animation: panelFloat 6s ease-in-out infinite; }
     @keyframes panelFloat{0%{transform:translateY(0) rotate(0) translateX(var(--panel-translate));}50%{transform:translateY(-12px) rotate(1deg) translateX(calc(var(--panel-translate) * -1));}100%{transform:translateY(0) rotate(0) translateX(var(--panel-translate));} }
     .photo-box::after{content:"";position:absolute;inset:0;border-radius:24px;box-shadow:inset 0 0 40px rgba(255,255,255,0.02);pointer-events:none}
