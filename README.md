@@ -214,28 +214,36 @@
 <body>
 
 <script>
-    // Create 20 falling emojis
-    const emojis = ["📚", "😊", "📖", "🎬", "🎧", "🔥", "📘", "😁"];
 
-    for (let i = 0; i < 20; i++) {
+function applyEmojiSettings() {
+
+    // Remove old emojis
+    document.querySelectorAll(".emoji-rain").forEach(e => e.remove());
+
+    let emojiText = document.getElementById("emojiInput").value.trim();
+    let emojiList = emojiText.split(" ").filter(e => e.length > 0);
+
+    let count = parseInt(document.getElementById("emojiCount").value);
+    let size = document.getElementById("emojiSize").value + "px";
+    let speed = document.getElementById("emojiSpeed").value;
+
+    if (emojiList.length === 0) emojiList = ["📚", "😊", "🎬", "🔥"];
+
+    for (let i = 0; i < count; i++) {
         let span = document.createElement("span");
-        span.classList.add("emoji");
+        span.classList.add("emoji", "emoji-rain");
 
-        // Random emoji
-        span.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+        span.innerHTML = emojiList[Math.floor(Math.random() * emojiList.length)];
 
-        // Random horizontal position
         span.style.left = Math.random() * 100 + "%";
-
-        // Random animation duration
-        span.style.animationDuration = (8 + Math.random() * 10) + "s";
-
-        // Random delay
+        span.style.fontSize = size;
+        span.style.animationDuration = speed + "s";
         span.style.animationDelay = (Math.random() * 5) + "s";
 
-        // Add to page
         document.body.appendChild(span);
     }
+}
+
 </script>
 
 </body>
