@@ -38,7 +38,7 @@
     @keyframes lds{0%{transform:scale(.6);opacity:.3}50%{transform:scale(1.2);opacity:1}100%{transform:scale(.6);opacity:.3}}
 
     header{ display:flex; align-items:center; gap:18px; padding:18px 22px; position:relative; z-index:50; }
-    .logo-circle{ width:88px;height:88px;border-radius:50%; background: url('YOUR_LOGO_URL_HERE') center/cover; border:3px solid rgba(255,255,255,0.12); box-shadow:0 8px 28px rgba(0,0,0,.6); transform-origin:center; transition: transform .6s ease, box-shadow .3s ease; will-change: transform; }
+    .logo-circle{ width:88px;height:88px;border-radius:50%; background: url('logo.png') center/cover; border:3px solid rgba(255,255,255,0.12); box-shadow:0 8px 28px rgba(0,0,0,.6); transform-origin:center; transition: transform .6s ease, box-shadow .3s ease; will-change: transform; }
     .logo-animate{ animation: logoFloat 4s ease-in-out infinite; }
     @keyframes logoFloat{0%{transform:translateY(0) rotate(0) scale(var(--logo-scale));}50%{transform:translateY(-10px) rotate(-4deg) scale(calc(var(--logo-scale) + 0.02));}100%{transform:translateY(0) rotate(0) scale(var(--logo-scale));} }
 
