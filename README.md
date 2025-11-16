@@ -186,28 +186,26 @@
 <title>Emoji Rain</title>
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background: #111;
-        height: 100vh;
-        position: relative;
-    }
+  .emoji-rain {
+    position: absolute;
+    top: -60px;
+    opacity: 0.95;
+    pointer-events: none;
+    animation-name: fallDown;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
 
-    .emoji {
-        position: absolute;
-        top: -50px;
-        font-size: 40px;
-        animation-name: fall;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
+@keyframes fallDown {
+    0% { 
+        transform: translateY(-100px) rotate(0deg); 
+        opacity: 1; 
     }
-
-    @keyframes fall {
-        0% { transform: translateY(-100px); opacity: 1; }
-        100% { transform: translateY(110vh); opacity: 0.3; }
+    100% { 
+        transform: translateY(110vh) rotate(360deg); 
+        opacity: 0.3; 
     }
+}
 </style>
 </head>
 
