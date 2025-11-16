@@ -318,7 +318,7 @@ function sendMsg(){
 
 /* audio */
 function togglePlay(){
-  if(!player.src){ alert('Add YOUR_AUDIO_URL in code to play'); return; }
+  if(!player.src){ alert('__ Sampurna Jagala Tuzya Rupacha Rang Dila Deva __ Shinde Saajan __ संपूर्ण जगाला तुझ्या रूपाचा __(MP3_70K).mp3'); return; }
   if(player.paused) { player.play(); trackName.textContent='Playing'; } 
   else { player.pause(); trackName.textContent='Paused'; }
 }
