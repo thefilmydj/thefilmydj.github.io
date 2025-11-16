@@ -329,6 +329,30 @@
     <label class="small"><input type="checkbox" id="panelAnimToggle" checked /> Animate</label>
   </div>
 
+   <h3 style="margin-top:10px">Emoji Controls</h3>
+
+   <div class="settings-row">
+      <div class="label">Emoji List</div>
+      <input type="text" id="emojiInput" placeholder="📚 😊 🎧 🔥" style="flex:1">
+    </div>
+
+  <div class="settings-row">
+      <div class="label">Emoji Count</div>
+      <input type="number" id="emojiCount" min="5" max="100" value="20" style="width:80px">
+    </div>
+
+  <div class="settings-row">
+      <div class="label">Emoji Size</div>
+      <input type="range" id="emojiSize" min="20" max="80" value="40" />
+    </div>
+
+   <div class="settings-row">
+      <div class="label">Speed</div>
+      <input type="range" id="emojiSpeed" min="5" max="20" value="12" />
+    </div>
+
+  <button class="btn-primary" onclick="applyEmojiSettings()">Apply Emojis</button>
+
   <div style="display:flex;gap:8px;margin-top:10px">
     <button class="btn-primary" id="saveThemeBtn">Save Theme</button>
     <button class="btn-ghost" id="resetBtn">Reset</button>
