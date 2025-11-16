@@ -285,7 +285,7 @@
 <!-- bottom music bar -->
 <div class="music-bar" id="musicBar">
   <button onclick="togglePlay()" class="ctrl-btn">⏯</button>
-  <audio id="player" src="YOUR_AUDIO_URL" preload="none"></audio>
+  <audio id="player" src="__ Sampurna Jagala Tuzya Rupacha Rang Dila Deva __ Shinde Saajan __ संपूर्ण जगाला तुझ्या रूपाचा __(MP3_70K).mp3" preload="none"></audio>
   <div id="trackName">No Track</div>
 </div>
 
